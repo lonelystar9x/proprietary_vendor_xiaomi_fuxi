@@ -3543,7 +3543,7 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libcom.xiaomi.mawutilsold",
                 "libui",
-                "libvideofilter_only",
+                "libMiVideoFilter",
                 "libc++",
                 "libc",
                 "libm",
@@ -9089,6 +9089,7 @@ cc_prebuilt_library_shared {
                 "proprietary/odm/lib64/hw/camera.xiaomi.so",
             ],
             shared_libs: [
+                "libprocessgroup_shim",
                 "libcutils",
                 "libcamera_metadata",
                 "libcom.xiaomi.debug",
@@ -9182,6 +9183,7 @@ cc_prebuilt_library_shared {
                 "proprietary/odm/lib64/hw/com.qti.chi.override.so",
             ],
             shared_libs: [
+                "libprocessgroup_shim",
                 "libc++",
                 "libcutils",
                 "liblog",
@@ -9330,6 +9332,34 @@ cc_prebuilt_library_shared {
                 "libGLESv2",
                 "libEGL",
                 "liblog",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libMiVideoFilter",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libMiVideoFilter.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libGLESv3",
+                "libEGL",
+                "libnativewindow",
+                "libz",
+                "libm",
+                "libdl",
+                "libc",
             ],
         },
     },
@@ -9915,6 +9945,7 @@ cc_prebuilt_library_shared {
                 "proprietary/odm/lib64/libcamxcommonutils.so",
             ],
             shared_libs: [
+                "libprocessgroup_shim",
                 "libc++",
                 "libcutils",
                 "liblog",
@@ -10372,6 +10403,7 @@ cc_prebuilt_library_shared {
                 "proprietary/odm/lib64/libchifeature2.so",
             ],
             shared_libs: [
+                "libprocessgroup_shim",
                 "libc++",
                 "libcutils",
                 "liblog",
@@ -11908,6 +11940,7 @@ cc_prebuilt_library_shared {
                 "proprietary/odm/lib64/libmialgoengine.so",
             ],
             shared_libs: [
+                "libprocessgroup_shim",
                 "libc++",
                 "libcutils",
                 "liblog",
@@ -13554,33 +13587,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libvideofilter_only",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/libvideofilter_only.so",
-            ],
-            shared_libs: [
-                "libGLESv3",
-                "libEGL",
-                "liblog",
-                "libc++_shared",
-                "libm",
-                "libdl",
-                "libc",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libvideoml",
     owner: "xiaomi",
     strip: {
@@ -14137,6 +14143,19 @@ prebuilt_rfsa {
     src: "proprietary/odm/lib/rfsa/adsp/libmialgo_night_align_cdsp_skel.so",
     relative_install_path: "adsp",
     device_specific: true,
+}
+
+android_app_import {
+    name: "EuiccGoogle",
+    owner: "xiaomi",
+    apk: "proprietary/product/priv-app/EuiccGoogle/EuiccGoogle.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
 }
 
 cc_prebuilt_binary {

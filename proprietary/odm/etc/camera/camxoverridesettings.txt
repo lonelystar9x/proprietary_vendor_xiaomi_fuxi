@@ -1,6 +1,9 @@
 # M3 setting file
 multiCameraLogicalXMLFile=fuxi.xml
 
+#Resort the sensor data
+enableResortSensorData=TRUE
+
 #InSensorZoom
 enableInSensorZoom=TRUE
 enableDynamicModeSwitchVCUpdate=FALSE
@@ -26,6 +29,8 @@ satFallbackDelta=10:0:0:0|10:0:0:0
 disFbZoomRatio=1.0:3.0:3.0:20|1.0:3.0:3.0:20
 luxFbZoomRatio=1.0:3.0:3.0:20|1.0:3.0:3.0:20
 satFallbackSwitch=0x3
+
+enableSatZoomingButton=TRUE
 
 # SAT zoom animation params
 isSwitchAnimationSupported=TRUE
@@ -257,8 +262,8 @@ enableSignal35Tombstone=FALSE
 
 is30fpsDynamicSupported=TRUE
 is60fpsDynamicSupported=TRUE
-dynamicFpsSupported=0@30|1@30|2@30|3@30|4@30|7@30|4@60|7@60
-
+# dynamicFpsSupported=0@30|1@30|2@30|3@30|4@30|7@30|4@60|7@60 (ImmuneSystem changes camera ids)
+dynamicFpsSupported=0@30|1@30|2@30|4@30|5@30|3@30|5@60|3@60
 #video hdr是否支持动态帧率控制, 0不支持, 1是前置支持, 2是后置支持, 3是前后置支持
 isVideoHDRSupportSetFreq=0x3
 
@@ -303,6 +308,20 @@ multiCameraSWFrameSyncType=SOFSync
 
 # Disable DMA Fence
 enableDMAFence=FALSE
+
+#AWB gamma ratio
+customColortemperatureGainRatio = 1.1250:0.8083|1.1178:0.8137|1.1350:0.7806|1.1749:0.7238|0.8633:1.2862|0.8189:1.4421|0.7849:1.4663|0.8044:1.4977
+customColortuneGainRatio = 1.1212:1.1997|1.1503:1.2415|1.1622:1.2363|1.1784:1.2370|0.8825:0.8658|0.8898:0.8535|0.8819:0.8389|0.9093:0.8199
+
+#support customimagequality
+isCustomQualitySupported=TRUE
+
+#customimagequality lut config mask
+#Bit[0] - no use lut
+#Bit[1] - tone use lut
+#Bit[2] - Saturation use lut
+#Bit[3] - tone and Saturation use lut
+XiaomiCIQLutConfigMask=0x2
 
 #enable mimotion
 isMiMotionSupported=FALSE
@@ -426,3 +445,6 @@ enableVideoLivePowerSave=TRUE
 #for camera mipi crc error
 enableInternalKMDRecovery=TRUE
 crcErrorDivisor=100
+
+# Exif
+DisplayLeicaStyle=TRUE
