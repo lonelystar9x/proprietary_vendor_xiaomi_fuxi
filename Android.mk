@@ -6,7 +6,7 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),fuxi)
 
-$(call add-radio-file-sha1-checked,radio/abl.img,b76ca9b34251320ec58a2d791925a3b11917f6ce)
+$(call add-radio-file-sha1-checked,radio/abl.img,f0f3149375b360b3d9f03b19bc72571c8321dce1)
 $(call add-radio-file-sha1-checked,radio/aop.img,b4835b1632cdebcda24bb22c9faf2af31dc72095)
 $(call add-radio-file-sha1-checked,radio/aop_config.img,44977299cadd1976632c795ffbcb72e87bbdd7c0)
 $(call add-radio-file-sha1-checked,radio/bluetooth.img,f6eb50760fa1d71fb6b5ba146fc685f9e7d99204)
