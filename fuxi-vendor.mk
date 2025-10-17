@@ -112,6 +112,13 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/fuxi/proprietary/odm/etc/camera/preview_bokeh_params_mono.json:$(TARGET_COPY_OUT_ODM)/etc/camera/preview_bokeh_params_mono.json \
     vendor/xiaomi/fuxi/proprietary/odm/etc/camera/preview_bokeh_params_pro.json:$(TARGET_COPY_OUT_ODM)/etc/camera/preview_bokeh_params_pro.json \
     vendor/xiaomi/fuxi/proprietary/odm/etc/camera/preview_mdbokeh_params_pro.json:$(TARGET_COPY_OUT_ODM)/etc/camera/preview_mdbokeh_params_pro.json \
+    vendor/xiaomi/fuxi/proprietary/odm/etc/camera/sky_segmentation_qat.dlc:$(TARGET_COPY_OUT_ODM)/etc/camera/sky_segmentation_qat.dlc \
+    vendor/xiaomi/fuxi/proprietary/odm/etc/camera/snsc.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/snsc.bin \
+    vendor/xiaomi/fuxi/proprietary/odm/etc/camera/snsc_params.json:$(TARGET_COPY_OUT_ODM)/etc/camera/snsc_params.json \
+    vendor/xiaomi/fuxi/proprietary/odm/etc/camera/ultrazoom.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/ultrazoom.bin \
+    vendor/xiaomi/fuxi/proprietary/odm/etc/camera/ultrazoom_ii.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/ultrazoom_ii.bin \
+    vendor/xiaomi/fuxi/proprietary/odm/etc/camera/video_stabilizer.xml:$(TARGET_COPY_OUT_ODM)/etc/camera/video_stabilizer.xml \
+    vendor/xiaomi/fuxi/proprietary/odm/etc/camera/vidhance_calibration:$(TARGET_COPY_OUT_ODM)/etc/camera/vidhance_calibration \
     vendor/xiaomi/fuxi/proprietary/odm/etc/camera/resources/default_param.json:$(TARGET_COPY_OUT_ODM)/etc/camera/resources/default_param.json \
     vendor/xiaomi/fuxi/proprietary/odm/etc/camera/resources/kernel/1720888_32.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/resources/kernel/1720888_32.bin \
     vendor/xiaomi/fuxi/proprietary/odm/etc/camera/resources/kernel/1720888_64.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/resources/kernel/1720888_64.bin \
@@ -698,6 +705,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libPlatformValidatorShared-camera \
     android.hardware.camera.provider@2.7-impl-vcamera \
+    vendor.xiaomi.hardware.quickcamera@1.0-impl \
     libPlatformValidatorShared \
     libQnnChrometraceProfilingReader \
     libQnnGpu \
@@ -725,6 +733,7 @@ PRODUCT_PACKAGES += \
     libmicuttlefish_fs \
     libmivsock_utils \
     libos \
+    libquickcamera \
     libqvr_cam_cdsp_driver_stub \
     libqvr_cdsp_driver_stub \
     libqvrcamera_client.qti \
@@ -738,6 +747,7 @@ PRODUCT_PACKAGES += \
     libthreadutils \
     vendor.qti.hardware.qxr-V1-ndk \
     vendor.xiaomi.hardware.bgservice@1.0 \
+    vendor.xiaomi.hardware.quickcamera@1.0 \
     bm3a68v08s11n29 \
     bm3a68v08s11n30 \
     bm3a68v08s11n35 \
@@ -956,6 +966,7 @@ PRODUCT_PACKAGES += \
     com.xiaomi.plugin.capbokeh \
     com.xiaomi.plugin.capdepth \
     com.xiaomi.plugin.caphdr \
+    com.xiaomi.plugin.deflicker \
     com.xiaomi.plugin.depurple \
     com.xiaomi.plugin.frontbokeh \
     com.xiaomi.plugin.gpu \
@@ -1075,6 +1086,7 @@ PRODUCT_PACKAGES += \
     libcom.xiaomi.pluginutils \
     libcommonchiutils \
     libdeflicker \
+    libdeflickerNM \
     libdualcam_optical_zoom_control \
     libdualcam_video_optical_zoom \
     libellv \
@@ -1179,6 +1191,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.aon-service-impl \
     vendor.qti.hardware.camera.postproc@1.0-service-impl \
     vendor.xiaomi.hardware.bgservice@1.0-impl \
+    vendor.xiaomi.hardware.campostproc@1.0 \
     libarcsoft_beauty_hvx_skel \
     libmialgo_ell_cdsp_skel \
     libmialgo_night_align_cdsp_skel \
