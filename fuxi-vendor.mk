@@ -1195,7 +1195,6 @@ PRODUCT_PACKAGES += \
     libarcsoft_beauty_hvx_skel \
     libmialgo_ell_cdsp_skel \
     libmialgo_night_align_cdsp_skel \
-    EuiccGoogle \
     android.hardware.camera.provider@2.7-virtual-camera-service \
     vendor.qti.camera.provider-service_64 \
     vendor.xiaomi.sensor.citsensorservice@2.0-service.xml \
